@@ -79,3 +79,8 @@ main {
     align-items: center;
     justify-content: flex-start;
 }
+
+#kiryu {
+    width: 100px;
+    height: 100px;
+}

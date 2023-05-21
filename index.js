@@ -1,0 +1,3 @@
+function KiryuClick() {
+    alert('Ola');
+}
