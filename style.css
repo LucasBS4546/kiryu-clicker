@@ -19,11 +19,63 @@
 
 
 main {
-    padding: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .shopicon {
     width: 120px;
     height: 120px;
+}
+
+.shopitem {
+    font-weight: 400;
+}
+
+.shopbuy {
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 100px;
+    height: 25px;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.shopbuy:hover {
+    background-color: lightblue;
+}
+
+.shopbuy:active {
+    font-size: 12px;
+    background-color: lightyellow;
+}
+
+#column1 {
+    background-color: lightgray;
+    height: 100vh;
+    padding: 75px;
+}
+
+#column1 tbody {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#column1 tr {
+    margin-top: 25px;
+}
+
+#column1 tr div {
+    margin-left: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
