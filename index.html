@@ -47,19 +47,22 @@
                 </tbody>
             </table>
         </section>
-        <section id="column2" class="flexcolumn">
-            <div>
-                <h2>Você tem</h2>
-                <h1>1 KIRYU</h1>
-            </div>
-            <div>
-                <img src="https://i.redd.it/pgvaaiqwdib51.png" alt="Kiryu" id="kiryu" usemap="#kiryubutton">
-                <map name="kiryubutton">
-                    <area shape="rect" coords="0, 0, 100, 100" onclick="KiryuClick()" alt="kiryu">
-                </map>
+        <section id="column2">
+            <div id="area">
+                <div>
+                    <h2>Você tem:</h2>
+                    <h1 id="value">0 Kiryus</h1>
+                </div>
+                <div>
+                    <button onclick="KiryuClick()">
+                        <img src="https://i.redd.it/pgvaaiqwdib51.png" alt="Kiryu" id="kiryu" >
+                    </button>
+                </div>
             </div>
         </section>
+        <section id="column3"></section>
     </main>
+    
 
 
     <script src="index.js"></script>

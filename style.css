@@ -53,6 +53,7 @@ main {
     background-color: lightgray;
     height: 100vh;
     padding: 75px;
+    width: 25vw;
 }
 
 #column1 tbody {
@@ -81,6 +82,64 @@ main {
 }
 
 #kiryu {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: 50px;
+    bottom: 50px;
+}
+
+#kiryu:hover {
+    width: 260px;
+    height: 260px;
+}
+
+
+
+#column2 button {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+}
+
+#column2 button:hover {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 260px;
+}
+
+#column2 {
+    text-align: center;
+    width: 50vw;
+    height: 100vh;
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#column2 h2 {
+    font-size: 30px;
+}
+
+#column2 h1 {
+    font-size: 45px;
+}
+
+#column2 #area {
+    position: relative;
+    top: 70px;
+}
+
+#column3 {
+    width: 25vw;
+    background-color: gray;
+    height: 100vh;
 }

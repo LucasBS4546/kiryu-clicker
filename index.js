@@ -1,3 +1,6 @@
+var num = 0
 function KiryuClick() {
-    alert('Ola');
+    num += 1;
+    var buttonvalue = document.getElementById("value");
+    buttonvalue.innerHTML = num + ' Kiryus';
 }
