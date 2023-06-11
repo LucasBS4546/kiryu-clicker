@@ -20,6 +20,11 @@
 
 main {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 
 .shopicon {
@@ -54,6 +59,13 @@ main {
     height: 100vh;
     padding: 75px;
     width: 25vw;
+    display: none;
+
+}
+
+#column1 h4 {
+    color: darkslateblue;
+    margin-bottom: 3px;
 }
 
 #column1 tbody {
@@ -75,11 +87,6 @@ main {
     flex-direction: column;
 }
 
-main {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
 
 #kiryu {
     width: 250px;
@@ -105,7 +112,28 @@ main {
     height: 250px;
 }
 
-#column2 button:hover {
+#column2 #botaoIniciar {
+    background-color: white;
+    height: 50px;
+    font-size: 20px;
+    width: 250px;
+    border-radius: 10px;
+    position: relative;
+    top: 90px;
+    border: 2px solid black;
+} 
+
+#column2 #botaoIniciar:hover {
+    background-color: rgb(207, 207, 207);
+    border: 2px solid rgb(41, 41, 41);
+} 
+
+#column2 #botaoIniciar:active {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+} 
+
+#column2 #kiryu:hover {
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -118,7 +146,6 @@ main {
     text-align: center;
     width: 50vw;
     height: 100vh;
-    background-color: wheat;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -142,4 +169,5 @@ main {
     width: 25vw;
     background-color: gray;
     height: 100vh;
+    display: none;
 }
