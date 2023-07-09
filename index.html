@@ -23,7 +23,7 @@
                             <div>
                                 <h3 class="shopitem">Majima tatico</h3>
                                 <h4>1 kiryu</h4>
-                                <button class="shopbuy" onclick="itemUm()">COMPRAR</button>
+                                <button class="shopbuy" onclick="itemUm(1)">COMPRAR</button>
                             </div>
                         </td>
                     </tr>
@@ -33,7 +33,7 @@
                             <div>
                                 <h3 class="shopitem">Bicicleta de bolso</h3>
                                 <h4>3 Kiryus</h4>
-                                <button class="shopbuy" onclick="itemDois()">COMPRAR</button>
+                                <button class="shopbuy" onclick="itemDois(3)">COMPRAR</button>
                             </div>
                         </td>
                     </tr>
@@ -43,7 +43,7 @@
                             <div>
                                 <h3 class="shopitem">Musica ao vivo</h3>
                                 <h4>5 Kiryus</h4>
-                                <button class="shopbuy" onclick="itemTres()">COMPRAR</button>
+                                <button class="shopbuy" onclick="itemTres(5)">COMPRAR</button>
                             </div>
                         </td>
                     </tr>
@@ -57,7 +57,7 @@
                     <h1 id="value">0 Kiryus</h1>
                 </div>
                 <div>
-                    <button onclick="KiryuClick(1)">
+                    <button onclick="AlterarValor(1)">
                         <img src="https://i.redd.it/pgvaaiqwdib51.png" alt="Kiryu" id="kiryu" >
                     </button>
                 </div>
@@ -67,9 +67,36 @@
             <div>
                 <h1>Árvore de habilidades</h1>
             </div>
-            <div>
-
-            </div>
+            <section id="arvore">
+                <div class="linhaarvore" id="linha1">
+                    <button id="Bupgrade1" onclick="upgrade1(10)">
+                        <h2>LABORATÓRIO DE KIRYUS</h2>
+                        <h3>Desbloqueia kiryus genéticamente modificados</h3>
+                    </button>
+                </div>
+                <div class="linhaarvore" id="linha2">
+                    <button id="Bupgrade2">
+                        <h2>KIRYU FELIZ</h2>
+                        <h3>+1 Kiryu por clicks</h3>
+                    </button>
+                </div>
+                <div class="linhaarvore" id="linha3">
+                    <button id="Bupgrade3">
+                        <h2>KIRYU ANÃO</h2>
+                        <h3>+1 Kiryu por clicks</h3>
+                    </button>
+                    <button id="Bupgrade4">
+                        <h2>KIRYU CALVO</h2>
+                        <h3>+1 Kiryu por clicks</h3>
+                    </button>
+                </div>
+                <div class="linhaarvore" id="linha4">
+                    <button id="Bupgrade5">
+                        <h2>KIRYU ANÃO CALVO</h2>
+                        <h3>+1 Kiryu por clicks</h3>
+                    </button>
+                </div>
+            </section>
         </section>
     </main>
     

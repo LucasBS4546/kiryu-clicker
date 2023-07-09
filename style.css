@@ -165,9 +165,79 @@ main {
     top: 70px;
 }
 
+
+
+
 #column3 {
     width: 25vw;
     background-color: gray;
     height: 100vh;
+    padding-block: 2%;
+    padding-inline: 1%;
     display: none;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#column3 h1 {
+    font-size: 30px;
+}
+
+#arvore {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+#arvore h2 {
+    font-size: 25px;
+}
+
+#arvore h3 {
+    font-size: 20px;
+}
+
+.linhaarvore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.linhaarvore button {
+    border-radius: 50px;
+    padding-block: 1%;
+    padding-left:30px;
+    padding-right:30px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.linhaarvore button:hover {
+    background-color: lightblue;
+}
+
+.linhaarvore button:active {
+    font-size: 12px;
+    background-color: lightyellow;
+}
+
+#linha2, #linha3, #linha4 {
+    opacity: 0;
+}
+
+.linhaarvore button.desativado:hover {
+    background-color: white;
+}
+
+.linhaarvore button.desativado:active {
+    background-color: white;
 }
