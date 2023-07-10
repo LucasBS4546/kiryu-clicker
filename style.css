@@ -27,6 +27,10 @@ main {
     width: 100vw;
 }
 
+
+
+
+
 .shopicon {
     width: 120px;
     height: 120px;
@@ -87,8 +91,39 @@ main {
     flex-direction: column;
 }
 
+#column1 p {
+    font-family:system-ui;
+    font-weight: 550;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
 
-#kiryu {
+#column1 span {
+    display: flex;
+    align-items: center;
+    width: 10vw;
+}
+
+#column1 span h5 {
+    font-size: 18px;
+    position: relative;
+    left: 5px;
+    background-color: black;
+    border: 3px solid black;
+    color: white;
+    min-width: 18px;
+    width: auto;
+    text-align: center;
+}
+
+#area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#botaoKiryu {
     width: 250px;
     height: 250px;
     position: relative;
@@ -96,10 +131,84 @@ main {
     bottom: 50px;
 }
 
-#kiryu:hover {
-    width: 260px;
-    height: 260px;
+#kiryu {
+    height: 95%;
+    width: 95%;
 }
+
+#kiryu:hover {
+    width: 100%;
+    height: 100%;
+}
+
+#botaoKiryu:active #kiryu{
+    width: 95%;
+    height: 95%;    
+}
+
+#inserirKiryus {
+    width: 30vw;
+    height: 35vh;
+    border: 1px solid black;
+    position: relative;
+    top: 50px;
+    bottom: 50px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#dialogo {
+    width: 100%;
+    height: 65%;
+    background-color: rgb(255, 112, 112);
+    border-radius: 10px;
+    border: 8px double black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#caixaDeFala {
+    height: 75%;
+    font-size: 35px;
+}
+
+#caixaDeBotoes {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#caixaDeBotoes .Bdialogo {
+    background-color: #CF6A32;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 48%;
+    border: 2px black solid;
+    height: 100%;
+    font-weight: 600;
+}
+
+#inputFala {
+    width: 80%;
+    font-size: 50px;
+    border: black dashed 2px;
+    opacity: 0;
+    width: 1px;
+}
+
+#falaKiryuA {
+    color: blue;
+    text-decoration: underline;
+    font-style: italic;
+}
+
 
 
 
@@ -133,14 +242,6 @@ main {
     border: 2px solid black;
 } 
 
-#column2 #kiryu:hover {
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 260px;
-    height: 260px;
-}
 
 #column2 {
     text-align: center;
@@ -189,7 +290,7 @@ main {
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    height: 100%;
+    height: 80%;
     width: 100%;
 }
 
@@ -209,7 +310,7 @@ main {
 }
 
 .linhaarvore button {
-    border-radius: 50px;
+    border-radius: 25px;
     padding-block: 1%;
     padding-left:30px;
     padding-right:30px;
@@ -219,6 +320,12 @@ main {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    margin-inline: 10px;
+}
+
+.linhaarvore button h4 {
+    font-size: 20px;
+    color: darkslateblue;
 }
 
 .linhaarvore button:hover {
@@ -230,7 +337,7 @@ main {
     background-color: lightyellow;
 }
 
-#linha2, #linha3, #linha4 {
+#linha2, #linha3, #linha4, #linha5 {
     opacity: 0;
 }
 
@@ -241,3 +348,13 @@ main {
 .linhaarvore button.desativado:active {
     background-color: white;
 }
+
+#TextoArvoreEmCima {
+    opacity: 0;
+}
+
+#Bupgrade3, #Bupgrade4 {
+    width: 50%;
+    height: 17vh;
+}
+
