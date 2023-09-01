@@ -8,9 +8,7 @@
     <title>Kiryu Clicker</title>
 </head>
 <body>
-    <main>
-
-
+    <main id="main">
         <section id="column1">
             <table>
                 <thead>
@@ -27,9 +25,9 @@
                                     <h3 class="shopitem">Majima tatico</h3>
                                     <h5 id="H5item1">0</h5>
                                 </span>
-                                <h4 id="H4item1">5 kiryus</h4>
+                                <h4 id="H4item1">69 kiryus</h4>
                                 <p>Gera 1 Kiryu por segundo</p>
-                                <button id="Bitem1" class="shopbuy" onclick="item1(5)">COMPRAR</button>
+                                <button id="Bitem1" class="shopbuy" onclick="item1(69)">COMPRAR</button>
                             </div>
                         </td>
                     </tr>
@@ -41,9 +39,9 @@
                                     <h3 class="shopitem">Bicicleta de bolso</h3>
                                     <h5 id="H5item2">0</h5>
                                 </span>
-                                <h4 id="H4item2">100 Kiryus</h4>
+                                <h4 id="H4item2">750 Kiryus</h4>
                                 <p>Gera 5 Kiryus por segundo</p>
-                                <button id="Bitem2" class="shopbuy" onclick="item2(100)">COMPRAR</button>
+                                <button id="Bitem2" class="shopbuy" onclick="item2(750)">COMPRAR</button>
                             </div>
                         </td>
                     </tr>
@@ -55,14 +53,32 @@
                                     <h3 class="shopitem">Musica ao vivo</h3>
                                     <h5 id="H5item3">0</h5>
                                 </span>
-                                <h4 id="H4item3">500 Kiryus</h4>
+                                <h4 id="H4item3">5000 Kiryus</h4>
                                 <p>Gera 20 Kiryus por segundo</p>
-                                <button id="Bitem3" class="shopbuy" onclick="item3(500)">COMPRAR</button>
+                                <button id="Bitem3" class="shopbuy" onclick="item3(5000)">COMPRAR</button>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <div id="audiobuttons">
+                <span>
+                    <button onclick="tocarMusica(1)" class="audioButton"></button>
+                    <p>Friday Night</p>
+                </span>
+                <span>
+                    <button onclick="tocarMusica(2)" class="audioButton"></button>
+                    <p>Cinderela</p>
+                </span>
+                <span>
+                    <button onclick="tocarMusica(3)" class="audioButton"></button>
+                    <p>Judgement</p>
+                </span>
+                <span>
+                    <button onclick="pausarMusicas()" id="audioPauseButton"></button>
+                    <p>PARAR MUSICA</p>
+                </span>
+            </div>
         </section>
 
 
@@ -78,7 +94,7 @@
                 </div>
                 <div>
                     <button onclick="KiryuClick(clickValor)" id="botaoKiryu">
-                        <img src="https://i.redd.it/pgvaaiqwdib51.png" alt="Kiryu" id="kiryu" >
+                        <img src="imagens/kiryu1.png" alt="Kiryu" id="kiryu" >
                     </button>
                 </div>
                 <div id="inserirKiryus">
@@ -88,8 +104,11 @@
                             <button class="Bdialogo" id="opcao1" onclick="resposta1()">Eu desejo muitos Kiryus</button>
                             <button class="Bdialogo" id="opcao2" onclick="resposta2()">Eu desejo você</button>
                         </span>
+                        <span id="inputcaixa">
+                            <input type="number" id="inputFala">
+                            <button onclick="receberInput()" id="inputEnviar">OK</button>
+                        </span>
                     </div>
-                    <input type="number" id="inputFala">
                 </div>
             </div>
         </section>
@@ -99,48 +118,48 @@
 
 
         <section id="column3">
-            <div id="TextoArvoreEmCima">
+            <div id="TextoArvoreEmCima" class="flex">
                 <h1>KIRYU LABS</h1>
             </div>
             <section id="arvore">
                 <div class="linhaarvore" id="linha1">
-                    <button id="Bupgrade1" onclick="upgrade1(20)">
+                    <button id="Bupgrade1" onclick="upgrade1(100)">
                         <h2>LABORATÓRIO DE KIRYUS</h2>
-                        <h4 id="H4upgrade1">20 Kiryus</h4>
+                        <h4 id="H4upgrade1">100 Kiryus</h4>
                         <h3>Desbloqueia kiryus genéticamente modificados</h3>
                     </button>
                 </div>
                 <div class="linhaarvore" id="linha2">
                     <button id="Bupgrade2">
                         <h2>KIRYU FELIZ</h2>
-                        <h4 id="H4upgrade2">50 Kiryus</h4>
+                        <h4 id="H4upgrade2">150 Kiryus</h4>
                         <h3>+1 Kiryu por clicks</h3>
                     </button>
                 </div>
                 <div class="linhaarvore" id="linha3">
                     <button id="Bupgrade3">
                         <h2>KIRYU ANÃO</h2>
-                        <h4 id="H4upgrade3">150 Kiryus</h4>
-                        <h3>Ganhe 10% de seu kps ao clicar</h3>
+                        <h4 id="H4upgrade3">500 Kiryus</h4>
+                        <h3>Ganhe +10% de seu kps ao clicar</h3>
                     </button>
                     <button id="Bupgrade4">
                         <h2>KIRYU CALVO</h2>
-                        <h4 id="H4upgrade4">150 Kiryus</h4>
+                        <h4 id="H4upgrade4">500 Kiryus</h4>
                         <h3>+3 Kiryu por clicks</h3>
                     </button>
                 </div>
                 <div class="linhaarvore" id="linha4">
                     <button id="Bupgrade5">
                         <h2>KIRYU ANÃO CALVO</h2>
-                        <h4 id="H4upgrade5">50 Kiryus</h4>
-                        <h3>+1 Kiryu por clicks</h3>
+                        <h4 id="H4upgrade5">1500 Kiryus</h4>
+                        <h3>Ganhe +15% de seu kps ao clicar</h3>
                     </button>
                 </div>
                 <div class="linhaarvore" id="linha5">
                     <button id="Bupgrade6">
                         <h2>KIRYU ANÃO CALVO BRASILEIRO</h2>
-                        <h4 id="H4upgrade6">50 Kiryus</h4>
-                        <h3>+1 Kiryu por clicks</h3>
+                        <h4 id="H4upgrade6">15000 Kiryus</h4>
+                        <h3>Potencial desconhecido</h3>
                     </button>
                 </div>
             </section>
@@ -148,7 +167,11 @@
 
 
     </main>
-    
+
+    <audio loop src="audio/fridaynight.mp3" id="musica1"></audio>
+    <audio loop src="audio/cinderela.mp3" id="musica2"></audio>
+    <audio loop src="audio/breaking.mp3" id="musica3"></audio>
+
     <script src="index.js"></script>
 </body>
 </html>

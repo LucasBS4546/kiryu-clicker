@@ -73,11 +73,11 @@ function KiryuClick(numeroClick) {
     if(percentualKpsClick > 0) {
 
         var valorPercent = Math.floor(kps/percentualKpsClick)
-        kiryus = kiryus + numeroClick + valorPercent;
+        kiryus += numeroClick + valorPercent;
 
     } else {
 
-        kiryus = kiryus + numeroClick;
+        kiryus += numeroClick;
         
     }
 
@@ -89,7 +89,7 @@ function KiryuClick(numeroClick) {
 
 function AlterarValor(quantidade) {
 
-    kiryus = kiryus + quantidade;
+    kiryus += quantidade;
 
     atualizarValorVisual();
     eventosValor();
@@ -120,8 +120,6 @@ function iniciarJogo(custoItem) {
 
         }, 1000);
 
-
-        AlterarValor(1000)
     }
 }
 
@@ -143,12 +141,12 @@ function item1(custoItem) {
         
         AlterarValor(-custoItem);
 
-        kps = kps + 1;
+        kps += 1;
         atualizarKpsVisual()
 
         qntItem1++;
 
-        var novoValor = Math.floor(custoItem*1.8)
+        var novoValor = Math.ceil(69*(1.15**qntItem1))
 
         var botaoAtual = document.getElementById("Bitem1")
 
@@ -174,12 +172,12 @@ function item2(custoItem) {
         
         AlterarValor(-custoItem);
 
-        kps = kps + 5;
+        kps += 5;
         atualizarKpsVisual()
 
         qntItem2++;
 
-        var novoValor = Math.floor(custoItem*1.8)
+        var novoValor = Math.ceil(750*(1.15**qntItem2))
 
         var botaoAtual = document.getElementById("Bitem2")
 
@@ -205,13 +203,13 @@ function item3(custoItem) {
         
         AlterarValor(-custoItem);
 
-        kps = kps + 20;
+        kps += 20;
         atualizarKpsVisual()
 
         qntItem3++;
 
         
-        var novoValor = Math.floor(custoItem*1.8)
+        var novoValor = Math.ceil(5000*(1.15**qntItem3))
 
         var botaoAtual = document.getElementById("Bitem3")
 
@@ -242,6 +240,11 @@ function desativarBotaoUpgrade(numeroid) {
     document.getElementById("H4upgrade" + numeroid).style.color = "lightgray"
 }
 
+function mudarBotaoImagem(numeroimg) {
+    var imagemAtual = document.getElementById("kiryu");
+    imagemAtual.src = "imagens/kiryu"+ numeroimg +".png";
+}
+
 function upgrade1(custoItem) {
 
     if(kiryus < custoItem){
@@ -257,7 +260,7 @@ function upgrade1(custoItem) {
         document.getElementById("linha2").style.opacity = "1";
 
         var proxBotao = document.getElementById("Bupgrade2");
-        proxBotao.onclick = function() {upgrade2(50)}
+        proxBotao.onclick = function() {upgrade2(150)}
 
         document.getElementById("TextoArvoreEmCima").style.opacity = "1"
 
@@ -280,18 +283,19 @@ function upgrade2(custoItem) {
         AlterarValor(-custoItem);
 
         desativarBotaoUpgrade(2);
+        mudarBotaoImagem(2);
 
         document.getElementById("linha3").style.opacity = "1";
 
         var proxBotao = document.getElementById("Bupgrade3");
-        proxBotao.onclick = function() {upgrade3(150)}
+        proxBotao.onclick = function() {upgrade3(500)}
 
         var proxBotao = document.getElementById("Bupgrade4");
-        proxBotao.onclick = function() {upgrade4(150)}
+        proxBotao.onclick = function() {upgrade4(500)}
 
         var botaoKiryu = document.getElementById("botaoKiryu")
 
-        clickValor = clickValor + 1;
+        clickValor += 1;
 
     }
 
@@ -308,6 +312,7 @@ function upgrade3(custoItem) {
         AlterarValor(-custoItem);
 
         desativarBotaoUpgrade(3);
+        mudarBotaoImagem(3);
 
         upgrade3comprado = true;
 
@@ -316,11 +321,11 @@ function upgrade3(custoItem) {
             document.getElementById("linha4").style.opacity = "1";
 
             var proxBotao = document.getElementById("Bupgrade5");
-            proxBotao.onclick = function() {upgrade5(1)}
+            proxBotao.onclick = function() {upgrade5(1500)}
 
         }
 
-        percentualKpsClick = percentualKpsClick + 10;
+        percentualKpsClick += 10;
         
     }
     
@@ -337,6 +342,7 @@ function upgrade4(custoItem) {
         AlterarValor(-custoItem);
 
         desativarBotaoUpgrade(4);
+        mudarBotaoImagem(4);
 
         upgrade4comprado = true;
 
@@ -345,11 +351,11 @@ function upgrade4(custoItem) {
             document.getElementById("linha4").style.opacity = "1";
 
             var proxBotao = document.getElementById("Bupgrade5");
-            proxBotao.onclick = function() {upgrade5(1)}
+            proxBotao.onclick = function() {upgrade5(1500)}
             
         }
 
-        clickValor = clickValor + 3;
+        clickValor += 3;
         
     }
 
@@ -366,11 +372,14 @@ function upgrade5(custoItem) {
         AlterarValor(-custoItem);
 
         desativarBotaoUpgrade(5);
+        mudarBotaoImagem(5);
         
         document.getElementById("linha5").style.opacity = "1";
 
         var proxBotao = document.getElementById("Bupgrade6");
-        proxBotao.onclick = function() {upgrade6(50)}
+        proxBotao.onclick = function() {upgrade6(15000)}
+
+        percentualKpsClick += 15;
         
     }
     
@@ -387,6 +396,7 @@ function upgrade6(custoItem) {
         AlterarValor(-custoItem);
 
         desativarBotaoUpgrade(6);
+        mudarBotaoImagem(6);
 
         document.getElementById("inserirKiryus").style.display = "flex";
         
@@ -446,7 +456,7 @@ function resposta1() {
     document.getElementById("opcao2").style.display = "none"
     document.getElementById("opcao1").style.display = "none"
 
-    document.getElementById("inputFala").style.opacity = "1"
+    document.getElementById("inputcaixa").style.display = "flex"
     document.getElementById("inputFala").style.width = "80%"
 
 
@@ -580,5 +590,32 @@ function resposta5() {
     var botaoResp = document.getElementById("opcao1")
     botaoResp.innerText = "Não"
     botaoResp.onclick = function() {resposta4()}
+
+}
+
+function receberInput() {
+
+    var numeroInserido = document.getElementById("inputFala").value;
+    AlterarValor(Math.ceil(numeroInserido))
+    document.getElementById("inputFala").value = '';
+
+}
+
+
+// AUDIO E MUSICA
+
+function pausarMusicas() {
+    
+    document.getElementById("musica1").pause();
+    document.getElementById("musica2").pause();
+    document.getElementById("musica3").pause();
+
+}
+
+function tocarMusica(numeroid) {
+
+    pausarMusicas();
+    document.getElementById("musica" + numeroid).play();
+    document.getElementById("musica" + numeroid).volume = 0.2;
 
 }
