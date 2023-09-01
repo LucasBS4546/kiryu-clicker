@@ -604,18 +604,46 @@ function receberInput() {
 
 // AUDIO E MUSICA
 
-function pausarMusicas() {
-    
-    document.getElementById("musica1").pause();
-    document.getElementById("musica2").pause();
-    document.getElementById("musica3").pause();
 
-}
 
 function tocarMusica(numeroid) {
 
-    pausarMusicas();
-    document.getElementById("musica" + numeroid).play();
-    document.getElementById("musica" + numeroid).volume = 0.2;
+    var botaoClicado = document.getElementById("botaoMusica" + numeroid);
+    botaoClicado.classList.remove('audioButton');
+    botaoClicado.classList.add('audioPauseButton');
+    botaoClicado.onclick = function() {pausarMusica(numeroid)}
+
+    var musicaTocada = document.getElementById("musica" + numeroid);
+    musicaTocada.play();
+    musicaTocada.volume = 0.2;
+
+    if(numeroid == 1) {
+
+        pausarMusica(2);
+        pausarMusica(3);
+
+    } else if (numeroid == 2) {
+
+        pausarMusica(1);
+        pausarMusica(3);
+
+    } else {
+
+        pausarMusica(1);
+        pausarMusica(2);
+        
+    }
+
+}
+
+function pausarMusica(numeroid) {
+
+    var botaoClicado = document.getElementById("botaoMusica" + numeroid);
+    botaoClicado.classList.remove('audioPauseButton');
+    botaoClicado.classList.add('audioButton');
+    botaoClicado.onclick = function() {tocarMusica(numeroid)}
+
+    var musicaTocada = document.getElementById("musica" + numeroid);
+    musicaTocada.pause();
 
 }
