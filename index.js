@@ -47,6 +47,23 @@ function atualizarKpsVisual() {
 
 }
 
+function atualizarKpcVisual() {
+
+    var kpcvalue = document.getElementById("valuekpc");
+    
+    if(percentualKpsClick > 0) {
+
+        var valorPercent = Math.floor(kps*percentualKpsClick)        
+        kpcvalue.innerHTML = clickValor + valorPercent + ' kpc'
+
+    } else {
+        
+        kpcvalue.innerHTML = clickValor + ' kpc';
+
+    }
+
+}
+
 
 
 function eventosValor() {
@@ -72,7 +89,7 @@ function KiryuClick(numeroClick) {
 
     if(percentualKpsClick > 0) {
 
-        var valorPercent = Math.floor(kps/percentualKpsClick)
+        var valorPercent = Math.floor(kps*percentualKpsClick)
         kiryus += numeroClick + valorPercent;
 
     } else {
@@ -116,6 +133,7 @@ function iniciarJogo(custoItem) {
         setInterval(function () {
 
             atualizarKpsVisual()
+            atualizarKpcVisual()
             AlterarValor(kps)
 
         }, 1000);
@@ -143,6 +161,7 @@ function item1(custoItem) {
 
         kps += 1;
         atualizarKpsVisual()
+        atualizarKpcVisual()
 
         qntItem1++;
 
@@ -174,10 +193,11 @@ function item2(custoItem) {
 
         kps += 5;
         atualizarKpsVisual()
+        atualizarKpcVisual()
 
         qntItem2++;
 
-        var novoValor = Math.ceil(750*(1.15**qntItem2))
+        var novoValor = Math.ceil(569*(1.15**qntItem2))
 
         var botaoAtual = document.getElementById("Bitem2")
 
@@ -205,11 +225,12 @@ function item3(custoItem) {
 
         kps += 20;
         atualizarKpsVisual()
+        atualizarKpcVisual()
 
         qntItem3++;
 
         
-        var novoValor = Math.ceil(5000*(1.15**qntItem3))
+        var novoValor = Math.ceil(1420*(1.15**qntItem3))
 
         var botaoAtual = document.getElementById("Bitem3")
 
@@ -291,11 +312,12 @@ function upgrade2(custoItem) {
         proxBotao.onclick = function() {upgrade3(500)}
 
         var proxBotao = document.getElementById("Bupgrade4");
-        proxBotao.onclick = function() {upgrade4(500)}
+        proxBotao.onclick = function() {upgrade4(300)}
 
         var botaoKiryu = document.getElementById("botaoKiryu")
 
         clickValor += 1;
+        atualizarKpcVisual()
 
     }
 
@@ -321,11 +343,12 @@ function upgrade3(custoItem) {
             document.getElementById("linha4").style.opacity = "1";
 
             var proxBotao = document.getElementById("Bupgrade5");
-            proxBotao.onclick = function() {upgrade5(1500)}
+            proxBotao.onclick = function() {upgrade5(2000)}
 
         }
 
-        percentualKpsClick += 10;
+        percentualKpsClick += 0.1;
+        atualizarKpcVisual()
         
     }
     
@@ -351,11 +374,12 @@ function upgrade4(custoItem) {
             document.getElementById("linha4").style.opacity = "1";
 
             var proxBotao = document.getElementById("Bupgrade5");
-            proxBotao.onclick = function() {upgrade5(1500)}
+            proxBotao.onclick = function() {upgrade5(2000)}
             
         }
 
         clickValor += 3;
+        atualizarKpcVisual()
         
     }
 
@@ -377,9 +401,10 @@ function upgrade5(custoItem) {
         document.getElementById("linha5").style.opacity = "1";
 
         var proxBotao = document.getElementById("Bupgrade6");
-        proxBotao.onclick = function() {upgrade6(15000)}
+        proxBotao.onclick = function() {upgrade6(10000)}
 
-        percentualKpsClick += 15;
+        percentualKpsClick += 0.15;
+        atualizarKpcVisual()
         
     }
     
