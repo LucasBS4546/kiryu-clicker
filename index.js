@@ -640,7 +640,7 @@ function tocarMusica(numeroid) {
 
     var musicaTocada = document.getElementById("musica" + numeroid);
     musicaTocada.play();
-    musicaTocada.volume = 0.2;
+    musicaTocada.volume = 0.1;
 
     if(numeroid == 1) {
 
